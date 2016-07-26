@@ -27,17 +27,17 @@ namespace Lingoine.Views
 
         private void signup_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new SignUp());
         }
 
         private void signin_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new SignIn());
         }
 
         private void explore_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new MainScreen());
         }
     }
 }

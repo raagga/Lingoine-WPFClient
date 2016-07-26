@@ -27,12 +27,12 @@ namespace Lingoine.Views
 
         private void signInButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new WelcomeScreen());
         }
     }
 }
