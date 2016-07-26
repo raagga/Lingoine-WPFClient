@@ -8,14 +8,14 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="SignUp">
 
-    <Grid>
+    <Grid Background="#FFE7E122">
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockUserName">Username</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockUserName">Username:</TextBlock>
                 <TextBox Grid.Column="1" Name="textBoxUserName"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockEmail">Email</TextBlock>
+                <TextBlock Grid.Column="0" x:Name="textBlockEmail" Text="Email:"/>
                 <TextBox Grid.Column="1" Name="textBoxEmail"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -45,7 +45,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockPassword">Password</TextBlock>
+                <TextBlock Grid.Column="0" x:Name="textBlockPassword" Text="Password:"/>
                 <PasswordBox Grid.Column="1" Name="passwordBox1"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -60,7 +60,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockConfirmPassword">Confirm Password</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockConfirmPassword">Confirm Password:</TextBlock>
                 <PasswordBox Grid.Column="1" Name="passwordBoxConfirm"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -75,7 +75,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockDOB">Date of Birth</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockDOB">Date of Birth:</TextBlock>
                 <DatePicker Grid.Column="1" Name="dateOfBirth"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -91,7 +91,7 @@
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="75"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockGender">Gender</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockGender">Gender:</TextBlock>
                 <RadioButton Grid.Column="1" Name="radioButtonMale" Content="Male" GroupName="radioButtonGender" />
                 <RadioButton Grid.Column="2" Name="radioButtonFemale" Content="Female" GroupName="radioButtonGender" />
             </Grid>
@@ -107,7 +107,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockState">State</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockState">State:</TextBlock>
                 <TextBox Grid.Column="1" Name="textBoxState"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -122,7 +122,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockCountry">Country</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockCountry">Country:</TextBlock>
                 <TextBox Grid.Column="1" Name="textBoxCountry"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -137,7 +137,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockSkype">Skype ID</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockSkype">Skype ID:</TextBlock>
                 <TextBox Grid.Column="1" Name="textBoxSkype"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">

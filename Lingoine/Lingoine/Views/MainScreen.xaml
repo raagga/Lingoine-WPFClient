@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="MainScreen">
 
-    <Grid Background="White">
+    <Grid Background="#FFE7E122">
         <StackPanel>
             <Rectangle Height="20"></Rectangle>
             <TextBlock Name="title" FontSize = "30" Text="Welcome, {User}!"  VerticalAlignment = "Center" HorizontalAlignment = "Center" ></TextBlock>

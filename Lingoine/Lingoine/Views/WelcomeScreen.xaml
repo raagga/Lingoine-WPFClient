@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="WelcomeScreen">
 
-    <Grid Background="White">
+    <Grid Background="#FFE7E122">
         <StackPanel Orientation="Vertical">
             <Label Name="title" FontSize = "50" VerticalAlignment = "Center" HorizontalAlignment = "Center" Margin="87,50,89,0" >Lingoine</Label>
             <Button Name="signup" Width="100" Click="signup_Click" Content="Sign Up" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Red" Margin="0,10,0,0">
