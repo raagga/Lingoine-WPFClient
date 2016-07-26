@@ -8,6 +8,6 @@ namespace Lingoine.Utils
 {
     public class Constants
     {
-        public const string requestUrl = "http://localhost:1849/";
+        public const string requestUrl = "http://lingoine1.azurewebsites.net";
     }
 }

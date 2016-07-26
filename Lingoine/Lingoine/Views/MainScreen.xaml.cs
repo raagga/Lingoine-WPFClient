@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Lingoine.Models;
+using Lingoine.Utils;
 
 namespace Lingoine.Views
 {
@@ -54,6 +55,24 @@ namespace Lingoine.Views
 
         private void Interact_Click(object sender, RoutedEventArgs e)
         {
+            Models.User currUser = (Models.User)App.Current.Properties["User"];
+            string currUserEmail = currUser.Email;
+
+            int isPremium = 0;
+            if (currUser.IsPremium)
+            {
+                isPremium = 1;
+            }
+
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/UserTables/getSkypeInfo/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] + "/"+ isPremium.ToString() + "/", Method.GET);
+            var response = client.Execute(request);
+            string data = (string)response.Content;
+            string[] information = data.Split(',');
+
+            string connectedUser = information[0];
+            string connectedUserID = information[1];
+
             try
             {
                 Skype skype = new Skype();
@@ -67,7 +86,7 @@ namespace Lingoine.Views
                 skype.Attach(6, true);
 
                 // do some stuff
-                String username = "facebook:welcomenikul";
+                String username = connectedUser;
                 skype.Client.OpenMessageDialog(username);
 
                 //Call newCall = skype.PlaceCall(username);
@@ -78,9 +97,12 @@ namespace Lingoine.Views
                 //newCall.StartVideoSend();
                 ////newCall.VideoStatus.ToString();
 
+                var request1 = new RestRequest("api/UserTables/" + connectedUserID + "/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] ] + "/", Method.GET);
+                client.Execute(request1);
+
                 this.NavigationService.Navigate(new RatingScreen());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
