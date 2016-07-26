@@ -38,8 +38,8 @@ namespace Lingoine.Views
             {
                 gender = false;
             } 
-            var client = new RestClient("http://requestb.in/1ced5701");
-            var request = new RestRequest("", Method.POST);
+            var client = new RestClient("http://localhost:3257/");
+            var request = new RestRequest("api/UserTable/", Method.POST);
             request.RequestFormat = RestSharp.DataFormat.Json;
             request.AddBody(new User
             {
