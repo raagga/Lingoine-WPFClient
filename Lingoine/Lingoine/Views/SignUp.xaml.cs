@@ -57,6 +57,8 @@ namespace Lingoine.Views
             });
             var response = client.Execute(request);
             System.Diagnostics.Debug.WriteLine(response);
+
+            this.NavigationService.Navigate(new LanguageSelect());
         }
 
         private void resetButton_Click(object sender, RoutedEventArgs e)
