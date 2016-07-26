@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lingoine.Utils;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +26,28 @@ namespace Lingoine.Views
         {
             InitializeComponent();
             //TODO: Find available language
-            langSelect.Items.Add("French");
-            langSelect.Items.Add("German");
+            Models.User currUser = (Models.User)App.Current.Properties["User"];
+            string currUserEmail = currUser.Email;
+
+            var client = new RestClient(Constants.requestUrl);
+            var request1 = new RestRequest("api/UserLanguageTables/" + currUserEmail, Method.GET);
+            var userLanguageList = client.Execute<List<Models.UserLanguage>>(request1).Data;
+
+            var request2 = new RestRequest("api/LanguageTables/", Method.GET);
+            var languageList = client.Execute<List<Models.Language>>(request2).Data;
+
+            userLanguageList.ForEach(delegate (Models.UserLanguage userLanguage)
+            {
+                string toAddLang = string.Empty;
+                languageList.ForEach(delegate (Models.Language language) 
+                {
+                    if (language.Id == userLanguage.LanguageId)
+                    {
+                        toAddLang = language.LanguageName;
+                    }
+                });
+                langSelect.Items.Add(toAddLang);
+            });
             this.UpdateLayout();
         }
 

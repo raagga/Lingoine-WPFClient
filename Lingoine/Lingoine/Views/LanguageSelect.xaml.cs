@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lingoine.Utils;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,15 @@ namespace Lingoine.Views
         public LanguageSelect()
         {
             InitializeComponent();
+
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/LanguageTables/", Method.GET);
+            var queryResultList = client.Execute<List<Models.Language>>(request).Data;
+            queryResultList.ForEach( delegate(Models.Language lang)
+            {
+                langSelect.Items.Add(lang.LanguageName);
+            });
+            this.UpdateLayout();
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
@@ -32,14 +43,54 @@ namespace Lingoine.Views
 
         private void submitLang_Click(object sender, RoutedEventArgs e)
         {
+            Models.UserLanguage userLang = new Models.UserLanguage();
+            Models.User currUser = (Models.User)App.Current.Properties["User"];
+            userLang.UserEmail = currUser.Email;
+
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/LanguageTables/", Method.GET);
+            var queryResultList = client.Execute<List<Models.Language>>(request).Data;
+            string currLang = langSelect.SelectedItem.ToString();
+            queryResultList.ForEach(delegate (Models.Language lang)
+            {
+                if (lang.LanguageName == currLang)
+                {
+                    userLang.LanguageId = lang.Id;
+                }
+            });
+
+            request = new RestRequest("api/UserLanguageTables", Method.POST);
+            request.RequestFormat = RestSharp.DataFormat.Json;
+            request.AddBody(userLang);
+            var response = client.Execute(request);
+            System.Diagnostics.Debug.WriteLine(response.Content);
             this.NavigationService.Navigate(new ChooseLanguage());
-            // TODO: Commit to server
         }
 
         private void nextLang_Click(object sender, RoutedEventArgs e)
         {
+            Models.UserLanguage userLang = new Models.UserLanguage();
+            Models.User currUser = (Models.User)App.Current.Properties["User"];
+            userLang.UserEmail = currUser.Email;
+
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/LanguageTables/", Method.GET);
+            var queryResultList = client.Execute<List<Models.Language>>(request).Data;
+            string currLang = langSelect.SelectedItem.ToString();
+            queryResultList.ForEach(delegate (Models.Language lang)
+            {
+                if (lang.LanguageName == currLang)
+                {
+                    userLang.LanguageId = lang.Id;
+                }
+            });
+
+            request = new RestRequest("api/UserLanguageTables", Method.POST);
+            request.RequestFormat = RestSharp.DataFormat.Json;
+            request.AddBody(userLang);
+            var response = client.Execute(request);
+            System.Diagnostics.Debug.WriteLine(response.Content);
             this.NavigationService.Navigate(new LanguageSelect());
-            // TODO: Commit to server
         }
     }
 }

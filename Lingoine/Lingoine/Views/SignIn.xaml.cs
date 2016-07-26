@@ -59,6 +59,8 @@ namespace Lingoine.Views
                             {
                                 App.Current.Properties["UserLevel"] = "1";
                             }
+                            var request1 = new RestRequest("api/UserTables/" + queryResult.Email + "/1", Method.GET);
+                            client.Execute(request1);
                             this.NavigationService.Navigate(new ChooseLanguage());
                         }
                         else

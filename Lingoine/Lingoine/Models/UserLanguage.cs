@@ -8,7 +8,7 @@ namespace Lingoine.Models
 {
     public class UserLanguage
     {
-        public int UserId { get; set; }
+        public string UserEmail { get; set; }
         public int LanguageId { get; set; }
         public int ProficiencyLevel { get; set; }
         public float Rating { get; set; }

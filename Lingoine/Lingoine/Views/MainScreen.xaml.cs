@@ -26,18 +26,18 @@ namespace Lingoine.Views
         public MainScreen()
         {
             InitializeComponent();
-            //if ((string)App.Current.Properties["UserLevel"] == "0")
-            //{
-            //    Interact.IsEnabled = false;
-            //    Expert.IsEnabled = false;
-            //    AddLanguage.IsEnabled = false;
-            //    this.UpdateLayout();
-            //}
-            //else if ((string)App.Current.Properties["UserLevel"] == "1")
-            //{
-            //    Expert.IsEnabled = false;
-            //    this.UpdateLayout();
-            //}
+            if ((string)App.Current.Properties["UserLevel"] == "0")
+            {
+                Interact.IsEnabled = false;
+                Expert.IsEnabled = false;
+                AddLanguage.IsEnabled = false;
+                this.UpdateLayout();
+            }
+            else if ((string)App.Current.Properties["UserLevel"] == "1")
+            {
+                Expert.IsEnabled = false;
+                this.UpdateLayout();
+            }
             Models.User currentUser = new Models.User {
                 Username = "Guest"
             };
