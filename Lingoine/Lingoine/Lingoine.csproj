@@ -62,6 +62,9 @@
     <Compile Include="Views\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RatingScreen.xaml.cs">
+      <DependentUpon>RatingScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\MainScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RatingScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

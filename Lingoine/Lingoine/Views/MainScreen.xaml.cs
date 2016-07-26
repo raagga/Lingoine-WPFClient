@@ -54,13 +54,15 @@ namespace Lingoine.Views
             String username = "facebook:welcomenikul";
             skype.Client.OpenMessageDialog(username);
 
-            Call newCall = skype.PlaceCall(username);
-            do
-            {
-                System.Threading.Thread.Sleep(1);
-            } while (newCall.Status != TCallStatus.clsInProgress);
-            newCall.StartVideoSend();
-            newCall.VideoStatus.ToString();
+            //Call newCall = skype.PlaceCall(username);
+            //do
+            //{
+            //    System.Threading.Thread.Sleep(1);
+            //} while (newCall.Status != TCallStatus.clsInProgress);
+            //newCall.StartVideoSend();
+            ////newCall.VideoStatus.ToString();
+
+            this.NavigationService.Navigate(new RatingScreen());
 
         }
 
