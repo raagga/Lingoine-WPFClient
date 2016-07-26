@@ -26,18 +26,18 @@ namespace Lingoine.Views
         public MainScreen()
         {
             InitializeComponent();
-            if ((string)App.Current.Properties["UserLevel"] == "0")
-            {
-                Interact.IsEnabled = false;
-                Expert.IsEnabled = false;
-                AddLanguage.IsEnabled = false;
-                this.UpdateLayout();
-            }
-            else if ((string)App.Current.Properties["UserLevel"] == "1")
-            {
-                Expert.IsEnabled = false;
-                this.UpdateLayout();
-            }
+            //if ((string)App.Current.Properties["UserLevel"] == "0")
+            //{
+            //    Interact.IsEnabled = false;
+            //    Expert.IsEnabled = false;
+            //    AddLanguage.IsEnabled = false;
+            //    this.UpdateLayout();
+            //}
+            //else if ((string)App.Current.Properties["UserLevel"] == "1")
+            //{
+            //    Expert.IsEnabled = false;
+            //    this.UpdateLayout();
+            //}
             Models.User currentUser = new Models.User {
                 Username = "Guest"
             };
@@ -49,35 +49,41 @@ namespace Lingoine.Views
                 currentUser = (Models.User)App.Current.Properties["User"];
             }
             title.Text = "Welcome " + currentUser.Username + "!";
-            subtitle.Text = "Current Language: " + (string)App.Current.Properties["Language"];
+            subtitle.Text = (string)App.Current.Properties["Language"];
         }
 
         private void Interact_Click(object sender, RoutedEventArgs e)
         {
-
-            Skype skype = new Skype();
-            if (!skype.Client.IsRunning)
+            try
             {
-                // start minimized with no splash screen
-                skype.Client.Start(false, false);
+                Skype skype = new Skype();
+                if (!skype.Client.IsRunning)
+                {
+                    // start minimized with no splash screen
+                    skype.Client.Start(false, false);
+                }
+
+                // wait for the client to be connected and ready
+                skype.Attach(6, true);
+
+                // do some stuff
+                String username = "facebook:welcomenikul";
+                skype.Client.OpenMessageDialog(username);
+
+                //Call newCall = skype.PlaceCall(username);
+                //do
+                //{
+                //    System.Threading.Thread.Sleep(1);
+                //} while (newCall.Status != TCallStatus.clsInProgress);
+                //newCall.StartVideoSend();
+                ////newCall.VideoStatus.ToString();
+
+                this.NavigationService.Navigate(new RatingScreen());
             }
-
-            // wait for the client to be connected and ready
-            skype.Attach(6, true);
-
-            // do some stuff
-            String username = "facebook:welcomenikul";
-            skype.Client.OpenMessageDialog(username);
-
-            //Call newCall = skype.PlaceCall(username);
-            //do
-            //{
-            //    System.Threading.Thread.Sleep(1);
-            //} while (newCall.Status != TCallStatus.clsInProgress);
-            //newCall.StartVideoSend();
-            ////newCall.VideoStatus.ToString();
-
-            this.NavigationService.Navigate(new RatingScreen());
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
         }
 

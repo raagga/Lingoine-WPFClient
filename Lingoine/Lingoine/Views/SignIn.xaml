@@ -46,7 +46,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Name="Alert"></TextBlock>
+                <TextBlock Name="Alert" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Red"></TextBlock>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>

@@ -153,7 +153,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Name="ErrorBox"></TextBlock>
+                <TextBlock Name="ErrorBox" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Red"></TextBlock>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>

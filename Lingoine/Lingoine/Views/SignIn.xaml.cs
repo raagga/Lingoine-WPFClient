@@ -29,41 +29,49 @@ namespace Lingoine.Views
 
         private void signInButton_Click(object sender, RoutedEventArgs e)
         {
-            var client = new RestClient(Constants.requestUrl);
-            var request = new RestRequest("api/UserTables/"+textBoxUserName.Text, Method.GET);
-            var queryResultList = client.Execute<List<Models.User>>(request).Data;
-            Models.User queryResult = new Models.User();
-            if (queryResultList.Count == 0)
+            try
             {
-                Alert.Text = "User Doesn't Exist";
-            }
-            else
-            {
-                queryResult = queryResultList[0];
-                if (queryResult == null)
+                var client = new RestClient(Constants.requestUrl);
+                var request = new RestRequest("api/UserTables/" + textBoxUserName.Text, Method.GET);
+                var queryResultList = client.Execute<List<Models.User>>(request).Data;
+                Models.User queryResult = new Models.User();
+                if (queryResultList.Count == 0)
                 {
                     Alert.Text = "User Doesn't Exist";
                 }
                 else
                 {
-                    if (queryResult.Password == textBoxPassword.Password)
+                    queryResult = queryResultList[0];
+                    if (queryResult == null)
                     {
-                        App.Current.Properties["User"] = queryResult;
-                        if (queryResult.IsPremium == true)
-                        {
-                            App.Current.Properties["UserLevel"] = "2";
-                        }
-                        else
-                        {
-                            App.Current.Properties["UserLevel"] = "1";
-                        }
-                        this.NavigationService.Navigate(new ChooseLanguage());
+                        Alert.Text = "User Doesn't Exist";
                     }
                     else
                     {
-                        Alert.Text = "Wrong Password!";
+                        if (queryResult.Password == textBoxPassword.Password)
+                        {
+                            App.Current.Properties["User"] = queryResult;
+                            if (queryResult.IsPremium == true)
+                            {
+                                App.Current.Properties["UserLevel"] = "2";
+                            }
+                            else
+                            {
+                                App.Current.Properties["UserLevel"] = "1";
+                            }
+                            this.NavigationService.Navigate(new ChooseLanguage());
+                        }
+                        else
+                        {
+                            Alert.Text = "Wrong Password!";
+                        }
                     }
                 }
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+                Alert.Text = "Please enter both username and password";
             }
             
         }

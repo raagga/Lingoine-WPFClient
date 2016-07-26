@@ -27,7 +27,19 @@ namespace Lingoine.Views
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new MainScreen());
+            if(radioButton1.IsChecked.ToString() == "True" ||
+                radioButton2.IsChecked.ToString() == "True" ||
+                radioButton3.IsChecked.ToString() == "True" ||
+                radioButton4.IsChecked.ToString() == "True" ||
+                radioButton5.IsChecked.ToString() == "True")
+            {
+                this.NavigationService.Navigate(new MainScreen());
+            }
+            else
+            {
+                Alert.Text = "We appreciate your feedback :) Please choose your response";
+            }
+            
         }
     }
 }

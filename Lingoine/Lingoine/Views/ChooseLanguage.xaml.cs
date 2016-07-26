@@ -31,9 +31,17 @@ namespace Lingoine.Views
 
         private void choose_Click(object sender, RoutedEventArgs e)
         {
-            string selectedLanguage = langSelect.SelectedItem.ToString();
-            App.Current.Properties["Language"] = selectedLanguage;
-            this.NavigationService.Navigate(new MainScreen());
+            try
+            {
+                string selectedLanguage = langSelect.SelectedItem.ToString();
+                App.Current.Properties["Language"] = selectedLanguage;
+                this.NavigationService.Navigate(new MainScreen());
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+                ErrorBox.Text = "Please select a language";
+            }
         }
     }
 }
