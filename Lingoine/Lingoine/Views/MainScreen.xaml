@@ -8,7 +8,10 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="MainScreen">
 
-    <Grid Background="#FFE7E122">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
+        </Grid.Background>
         <StackPanel>
             <Rectangle Height="20"></Rectangle>
             <TextBlock Name="title" FontSize = "30" Text="Welcome, {User}!"  VerticalAlignment = "Center" HorizontalAlignment = "Center" ></TextBlock>

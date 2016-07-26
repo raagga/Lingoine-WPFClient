@@ -8,26 +8,72 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="WelcomeScreen">
 
-    <Grid Background="#FFE7E122">
-        <StackPanel Orientation="Vertical">
-            <Label Name="title" FontSize = "50" VerticalAlignment = "Center" HorizontalAlignment = "Center" Margin="87,50,89,0" >Lingoine</Label>
-            <Button Name="signup" Width="100" Click="signup_Click" Content="Sign Up" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Red" Margin="0,10,0,0">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-            <Button Name="signin" Width="100" Click="signin_Click" Content="Sign In" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Blue" Margin="0,10,0,0">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="explore" Width="100" Click="explore_Click" Content="Explore" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Lime" BorderThickness="1" Padding="1" Margin="0,10,0,0">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-        </StackPanel>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
+        </Grid.Background>
 
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" FontSize="100" Name="title" HorizontalAlignment="Center" FontFamily="Edwardian Script ITC" FontWeight="ExtraBold">Lingoine</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1" FontSize="40" Name="tagLine" HorizontalAlignment="Center" FontFamily="Edwardian Script ITC" FontWeight="Medium">interact, learn and have fun...</TextBlock>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="50"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="signup" Width="200" Click="signup_Click" Content="Sign Up" VerticalAlignment = "Center" FontSize = "40" HorizontalAlignment = "Center" Background="{x:Null}" BorderThickness="0">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="signin" Width="200" Click="signin_Click" Content="Sign In" VerticalAlignment = "Center" FontSize = "40" HorizontalAlignment = "Center" Background="{x:Null}" BorderThickness="0">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="15"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="explore" Width="200" Click="explore_Click" Content="Explore" VerticalAlignment = "Center" FontSize = "40" HorizontalAlignment = "Center" Background="{x:Null}" BorderThickness="0" >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+        </StackPanel>
 
     </Grid>
 </Page>

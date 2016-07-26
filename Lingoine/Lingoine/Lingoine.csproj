@@ -90,8 +90,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\LanguageSelect.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainScreen.xaml">
       <SubType>Designer</SubType>
@@ -161,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\juggling-language-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

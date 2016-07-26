@@ -8,7 +8,10 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="SignUp">
 
-    <Grid Background="#FFE7E122">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
+        </Grid.Background>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>

@@ -9,6 +9,9 @@
       Title="LanguageSelect">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
+        </Grid.Background>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
