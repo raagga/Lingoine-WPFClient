@@ -1,4 +1,5 @@
-﻿using SKYPE4COMLib;
+﻿using RestSharp;
+using SKYPE4COMLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lingoine.Models;
 
 namespace Lingoine.Views
 {
@@ -35,6 +37,11 @@ namespace Lingoine.Views
                 Expert.IsEnabled = false;
                 this.UpdateLayout();
             }
+            var client = new RestClient("http://localhost:3257/");
+            var request = new RestRequest("api/UserTables/", Method.GET);
+            var queryResult = client.Execute<List<Models.User>>(request).Data;
+            string username = queryResult[0].Username;
+            title.Text = "Welcome " + username + "!";
         }
 
         private void Interact_Click(object sender, RoutedEventArgs e)

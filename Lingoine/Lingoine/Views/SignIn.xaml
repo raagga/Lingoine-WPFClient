@@ -30,7 +30,19 @@
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Name="textBlockPassword">Password</TextBlock>
-                <TextBox Grid.Column="1" Name="textBoxPassword"/>
+                <PasswordBox Grid.Column="1" Name="textBoxPassword"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="Alert"></TextBlock>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
