@@ -15,32 +15,9 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockLabel" FontSize="18">Please rate your experience :)</TextBlock>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Rectangle Height="25"></Rectangle>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="20" />
-                </Grid.RowDefinitions>
-                <RadioButton Grid.Column="0" Grid.Row="0" Name="radioButton1" Content="Very Satisfied" GroupName="radioButtonRating" FontSize="14" />
-                <RadioButton Grid.Column="0" Grid.Row="1" Name="radioButton2" Content="Somewhat Satisfied" GroupName="radioButtonRating" FontSize="14" />
-                <RadioButton Grid.Column="0" Grid.Row="2" Name="radioButton3" Content="Neutral" GroupName="radioButtonRating" FontSize="14" />
-                <RadioButton Grid.Column="0" Grid.Row="3" Name="radioButton4" Content="Somewhat Dissatisfied" GroupName="radioButtonRating" FontSize="14"/>
-                <RadioButton Grid.Column="0" Grid.Row="4" Name="radioButton5" Content="Very Dissatisfied" GroupName="radioButtonRating" FontSize="14"/>
+                <TextBlock Grid.Column="0" Name="textBlockLabel" FontSize="35">Please rate your experience :)</TextBlock>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -50,30 +27,53 @@
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Column="0" Grid.Row="0" Name="textBlockComments" >We'd love to hear from you...</TextBlock>
+                <RadioButton Grid.Column="0" Grid.Row="0" Name="radioButton1" Content="Very Satisfied" GroupName="radioButtonRating" FontSize="18" />
+                <RadioButton Grid.Column="0" Grid.Row="1" Name="radioButton2" Content="Somewhat Satisfied" GroupName="radioButtonRating" FontSize="18" />
+                <RadioButton Grid.Column="0" Grid.Row="2" Name="radioButton3" Content="Neutral" GroupName="radioButtonRating" FontSize="18" />
+                <RadioButton Grid.Column="0" Grid.Row="3" Name="radioButton4" Content="Somewhat Dissatisfied" GroupName="radioButtonRating" FontSize="18"/>
+                <RadioButton Grid.Column="0" Grid.Row="4" Name="radioButton5" Content="Very Dissatisfied" GroupName="radioButtonRating" FontSize="18"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Name="textBlockComments" FontSize="18">We'd love to hear from you...</TextBlock>
                 <TextBox Grid.Column="0" Grid.Row="1" Name="textBoxComments" TextWrapping="Wrap"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle Height="30"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <CheckBox Grid.Column="0" Name="checkBoxSpam" FontSize="9">Check this if the call was a SPAM!</CheckBox>
+                <CheckBox Grid.Column="0" Name="checkBoxSpam" FontSize="10">Check this if the call was a SPAM!</CheckBox>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle Height="15"></Rectangle>
             </Grid>
@@ -81,7 +81,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Submit" Height="20" HorizontalAlignment="Center" x:Name="submitButton" Width="50" Click="submitButton_Click" />
+                <Button Content="Submit" Grid.Column="0" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="submitButton" Width="80" Click="submitButton_Click" Background="{x:Null}" BorderThickness="0" FontSize="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </StackPanel>
     </Grid>

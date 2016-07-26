@@ -12,8 +12,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
         </Grid.Background>
-        <StackPanel>
 
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="450"/>
