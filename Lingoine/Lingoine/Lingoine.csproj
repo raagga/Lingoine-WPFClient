@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Views\LanguageSelect.xaml.cs">
       <DependentUpon>LanguageSelect.xaml</DependentUpon>
     </Compile>

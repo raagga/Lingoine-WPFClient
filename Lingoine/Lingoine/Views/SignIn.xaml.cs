@@ -32,22 +32,29 @@ namespace Lingoine.Views
             var client = new RestClient(Constants.requestUrl);
             var request = new RestRequest("api/UserTables/"+textBoxUserName.Text, Method.GET);
             var queryResult = client.Execute<Models.User>(request).Data;
-            if (queryResult.Password == textBoxPassword.Password)
+            if (queryResult == null)
             {
-                App.Current.Properties["User"] = queryResult;
-                if (queryResult.IsPremium == true)
-                {
-                    App.Current.Properties["UserLevel"] = 2;
-                }
-                else
-                {
-                    App.Current.Properties["UserLevel"] = 1;
-                }
-                this.NavigationService.Navigate(new MainScreen());
+                Alert.Text = "Server Error!";
             }
             else
             {
-                Alert.Text = "Wrong Password!";
+                if (queryResult.Password == textBoxPassword.Password)
+                {
+                    App.Current.Properties["User"] = queryResult;
+                    if (queryResult.IsPremium == true)
+                    {
+                        App.Current.Properties["UserLevel"] = 2;
+                    }
+                    else
+                    {
+                        App.Current.Properties["UserLevel"] = 1;
+                    }
+                    this.NavigationService.Navigate(new MainScreen());
+                }
+                else
+                {
+                    Alert.Text = "Wrong Password!";
+                }
             }
         }
 
