@@ -30,25 +30,26 @@ namespace Lingoine.Views
         {
 
             Skype skype = new Skype();
-            skype.Client.Start(false, false);
-
             if (!skype.Client.IsRunning)
             {
                 // start minimized with no splash screen
                 skype.Client.Start(false, false);
-                //skype.Client.Start
             }
 
             // wait for the client to be connected and ready
             skype.Attach(6, true);
-            
-            //// access skype objects
-            Console.WriteLine("Missed message count: {0}", skype.MissedMessages.Count);
 
-            //// do some stuff
-            Console.WriteLine("enter a skype name to search for: ");
+            // do some stuff
             String username = "facebook:welcomenikul";
             skype.Client.OpenMessageDialog(username);
+
+            Call newCall = skype.PlaceCall(username);
+            do
+            {
+                System.Threading.Thread.Sleep(1);
+            } while (newCall.Status != TCallStatus.clsInProgress);
+            newCall.StartVideoSend();
+            newCall.VideoStatus.ToString();
 
         }
 
