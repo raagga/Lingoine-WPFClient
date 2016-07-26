@@ -10,50 +10,147 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-
-            <Grid Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150" />
-                    <ColumnDefinition Width="350*" MinWidth="296" />
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockUserName">Username</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxUserName"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+            
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockEmail">Email</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxEmail"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
 
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Name="textBlockFirstName" Text="First Name:" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Name="textBlockLastName" Text="Last Name:" Height="20" Width="73" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Name="textBlockUserName" Text="User Name:" Height="20" Width="77" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Name="textBlockEmail" Text="Email:" Height="20" Width="39" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Name="textBlockPassword" Text="Password:" Height="20" Width="65" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5" Name="textBlockConfirmPassword" Text="Confirm Password:" Height="20" Width="122" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="6" Name="textBlockDOB" Text="DOB:" Height="20" Width="34" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="7" Name="textBlockGender" Text="Gender:" Height="20" Width="52" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="8" Name="textBlockLocation" Text="Location:" Height="20" Width="60" Margin="0,8.2,0,0" Grid.RowSpan="2" />
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockPassword">Password</TextBlock>
+                <PasswordBox Grid.Column="1" Name="passwordBox1"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
 
-                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Name="textBoxFirstName" TextWrapping="Wrap" Width="296"/>
-                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Name="textBoxLastName" Height="32" Width="296" />
-                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Name="textBoxUserName" Height="32" Width="296" />
-                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Name="textBoxEmail" Height="32" Width="296" />
-                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Name="passwordBox1" Height="32" Width="296" />
-                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Name="passwordBoxConfirm" Height="32" Width="296" />
-                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="6" Name="dateOfBirth" Height="33" Width="296" />
-                <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" Name="radioButtonMale" Content="Male" GroupName="radioButtonGender" Height="32" Grid.RowSpan="2" Width="120" />
-                <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" Name="radioButtonFemale" Content="Female" GroupName="radioButtonGender" Height="32" Grid.RowSpan="2" Width="120" Margin="76.6,0.2,0,0" />
-                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="8" Name="textBoxLocation" Height="32" Grid.RowSpan="2" Width="296" Margin="0,13.2,0,-13.2" />
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockConfirmPassword">Confirm Password</TextBlock>
+                <PasswordBox Grid.Column="1" Name="passwordBoxConfirm"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockDOB">Date of Birth</TextBlock>
+                <DatePicker Grid.Column="1" Name="dateOfBirth"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockGender">Gender</TextBlock>
+                <RadioButton Grid.Column="1" Name="radioButtonMale" Content="Male" GroupName="radioButtonGender" />
+                <RadioButton Grid.Column="2" Name="radioButtonFemale" Content="Female" GroupName="radioButtonGender" />
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockState">State</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxState"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockCountry">Country</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxCountry"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="textBlockSkype">Skype ID</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxSkype"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="10"></Rectangle>
             </Grid>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="Submit" Height="30" HorizontalAlignment="Center" x:Name="submitButton" Width="70" Click="submitButton_Click" Margin="70,30,0,0" />
-                <Button Content="Reset" Height="30" HorizontalAlignment="Center" x:Name="resetButton" Width="70" Click="resetButton_Click" Margin="70,30,0,0" />
-                <Button Content="Cancel" Height="30" HorizontalAlignment="Center" x:Name="cancelButton" Width="70" Click="cancelButton_Click" Margin="70,30,0,0" />
+                <Button Content="Submit" Height="30" HorizontalAlignment="Center" x:Name="submitButton" Width="50" Click="submitButton_Click" Margin="35,30,35,0" />
+                <Button Content="Reset" Height="30" HorizontalAlignment="Center" x:Name="resetButton" Width="50" Click="resetButton_Click" Margin="35,30,35,0" />
+                <Button Content="Cancel" Height="30" HorizontalAlignment="Center" x:Name="cancelButton" Width="50" Click="cancelButton_Click" Margin="35,30,35,0" />
             </StackPanel>
         </StackPanel>
     </Grid>

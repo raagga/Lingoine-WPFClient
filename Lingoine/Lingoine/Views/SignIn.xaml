@@ -22,7 +22,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="20"></Rectangle>
+                <Rectangle Height="10"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -36,7 +36,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="20"></Rectangle>
+                <Rectangle Height="10"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -48,7 +48,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="20"></Rectangle>
+                <Rectangle Height="10"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
