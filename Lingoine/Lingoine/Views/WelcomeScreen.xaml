@@ -9,15 +9,23 @@
       Title="WelcomeScreen">
 
     <Grid Background="White">
-        <StackPanel>
-            <Rectangle Height="20"></Rectangle>
-            <TextBlock Name="title" FontSize = "30" Text="Lingoine"  VerticalAlignment = "Center" HorizontalAlignment = "Center" ></TextBlock>
-            <Rectangle Height="20"></Rectangle>
-            <Button Name="signup" Width="200" Click="signup_Click" Content="Sign Up" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
-            <Rectangle Height="20"></Rectangle>
-            <Button Name="signin" Width="200" Click="signin_Click" Content="Sign In" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
-            <Rectangle Height="20"></Rectangle>
-            <Button Name="explore" Width="200" Click="explore_Click" Content="Explore" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
+        <StackPanel Orientation="Vertical">
+            <Label Name="title" FontSize = "50" VerticalAlignment = "Center" HorizontalAlignment = "Center" Margin="87,50,89,0" >Lingoine</Label>
+            <Button Name="signup" Width="100" Click="signup_Click" Content="Sign Up" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Red" Margin="0,10,0,0">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Name="signin" Width="100" Click="signin_Click" Content="Sign In" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Blue" Margin="0,10,0,0">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="explore" Width="100" Click="explore_Click" Content="Explore" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center" Background="Lime" BorderThickness="1" Padding="1" Margin="0,10,0,0">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
         </StackPanel>
 
 
