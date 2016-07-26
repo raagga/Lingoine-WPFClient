@@ -45,11 +45,11 @@ namespace Lingoine.Views
             {
                 Username = textBoxUserName.Text,
                 DateOfBirth = dateOfBirth.DisplayDate,
-                State = "State",
-                Country = "Country",
+                State = textBlockState.Text,
+                Country = textBoxCountry.Text,
                 Email = textBoxEmail.Text,
                 Password = passwordBox1.Password,
-                SkypeId = "skypeID",
+                SkypeId = textBoxSkype.Text,
                 IsPremium = false,
                 Gender = gender,
                 IsOnline = false,
@@ -68,6 +68,9 @@ namespace Lingoine.Views
             passwordBoxConfirm.Password = string.Empty;
             radioButtonFemale.IsChecked = false;
             radioButtonMale.IsChecked = false;
+            textBlockState.Text = string.Empty;
+            textBoxCountry.Text = string.Empty;
+            textBoxSkype.Text = string.Empty;
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
