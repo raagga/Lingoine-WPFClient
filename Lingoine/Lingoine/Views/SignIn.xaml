@@ -8,65 +8,68 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="SignIn">
 
-    <Grid Background="#FF00F7FF">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
+        </Grid.Background>
+
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockUserName">Username</TextBlock>
-                <TextBox Grid.Column="1" Name="textBoxUserName"/>
+                <TextBlock Grid.Column="0" Name="textBlockUserName" FontSize="20">Username:</TextBlock>
+                <TextBox Grid.Column="1" Name="textBoxUserName" TextWrapping="Wrap"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle Height="10"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockPassword">Password</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockPassword" FontSize="20">Password:</TextBlock>
                 <PasswordBox Grid.Column="1" Name="textBoxPassword"/>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
+                <Rectangle Height="20"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="Alert"></TextBlock>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
+                <Rectangle Height="30"></Rectangle>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="225"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="signInButton" Width="200" Click="signInButton_Click" Content="Sign In" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Button Name="cancel" Width="200" Click="cancel_Click" Content="Cancel" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
+
+                <Button Content="Sign In" Grid.Column="0" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Name="signInButton" Width="80" Click="signInButton_Click" Background="{x:Null}" BorderThickness="0" FontSize ="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="Cancel" Grid.Column="1" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Name="cancel" Width="80" Click="cancel_Click" Background="{x:Null}" BorderThickness="0" FontSize ="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </StackPanel>
     </Grid>

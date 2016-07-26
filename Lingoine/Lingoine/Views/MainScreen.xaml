@@ -13,17 +13,79 @@
             <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
         </Grid.Background>
         <StackPanel>
-            <Rectangle Height="20"></Rectangle>
-            <TextBlock Name="title" FontSize = "30" Text="Welcome, {User}!"  VerticalAlignment = "Center" HorizontalAlignment = "Center" ></TextBlock>
-            <Rectangle Height="40"></Rectangle>
-            <TextBlock VerticalAlignment = "Center" HorizontalAlignment="Center">Interact with a Random Learner</TextBlock>
-            <Button Name="Interact" Width="200" Click="Interact_Click" Content="Random" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center"></Button>
-            <Rectangle Height="20"></Rectangle>
-            <TextBlock VerticalAlignment = "Center" HorizontalAlignment="Center">Interact with an Expert</TextBlock>
-            <Button Name="Expert" Width="200" Click="Expert_Click" Content="Expert" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center"></Button>
-            <Rectangle Height="20"></Rectangle>
-            <TextBlock VerticalAlignment = "Center" HorizontalAlignment="Center">Explore our Resources</TextBlock>
-            <Button Name="Explore" Width="200" Click="Explore_Click" Content="Resources" VerticalAlignment = "Center" FontSize = "25" HorizontalAlignment = "Center"></Button>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="title" FontSize="40" Grid.Column="0" Text="Welcome, {user}!" VerticalAlignment="Center" HorizontalAlignment="Center" ></TextBlock>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="50"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" VerticalAlignment = "Center" HorizontalAlignment="Center">Interact with a random learner</TextBlock>
+                <Button Content="Random" Grid.Row="1" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Name="Interact" Width="150" Click="Interact_Click" Background="{x:Null}" BorderThickness="0" FontSize ="25">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" VerticalAlignment = "Center" HorizontalAlignment="Center">Interact with an expert</TextBlock>
+                <Button Content="Expert" Grid.Row="1" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Name="Expert" Width="150" Click="Expert_Click" Background="{x:Null}" BorderThickness="0" FontSize ="25">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" VerticalAlignment = "Center" HorizontalAlignment="Center">Explore our resources</TextBlock>
+                <Button Content="Resources" Grid.Row="1" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Name="Explore" Width="150" Click="Explore_Click" Background="{x:Null}" BorderThickness="0" FontSize ="25">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>
