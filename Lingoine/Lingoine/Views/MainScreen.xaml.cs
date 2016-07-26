@@ -24,6 +24,17 @@ namespace Lingoine.Views
         public MainScreen()
         {
             InitializeComponent();
+            if ((string)App.Current.Properties["UserLevel"] == "0")
+            {
+                Interact.IsEnabled = false;
+                Expert.IsEnabled = false;
+                this.UpdateLayout();
+            }
+            else if ((string)App.Current.Properties["UserLevel"] == "1")
+            {
+                Expert.IsEnabled = false;
+                this.UpdateLayout();
+            }
         }
 
         private void Interact_Click(object sender, RoutedEventArgs e)
