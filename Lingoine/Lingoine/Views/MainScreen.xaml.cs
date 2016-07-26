@@ -30,6 +30,7 @@ namespace Lingoine.Views
             {
                 Interact.IsEnabled = false;
                 Expert.IsEnabled = false;
+                AddLanguage.IsEnabled = false;
                 this.UpdateLayout();
             }
             else if ((string)App.Current.Properties["UserLevel"] == "1")
@@ -91,12 +92,12 @@ namespace Lingoine.Views
 
         private void AddLanguage_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new LanguageSelect());
         }
 
         private void ChooseLanguage_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

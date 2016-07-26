@@ -53,7 +53,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="nextLang" Width="200" Click="nextLang_Click" Content="Submit" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
+                <Button Name="nextLang" Width="200" Click="nextLang_Click" Content="Add Another" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
