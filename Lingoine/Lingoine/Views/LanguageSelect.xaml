@@ -13,31 +13,33 @@
             <ImageBrush ImageSource="/Lingoine;component/Images/background1.jpg"/>
         </Grid.Background>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="250" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockLanguage">Language</TextBlock>
+                <TextBlock Grid.Column="0" Name="textBlockLanguage" FontSize="20">Language:</TextBlock>
                 <ComboBox Name="langSelect" Grid.Column="1" Text="Select Language">
-                    <ComboBoxItem Name="french">French</ComboBoxItem>
-                    <ComboBoxItem Name="german">German</ComboBoxItem>
-                    <ComboBoxItem Name="hindi">Hindi</ComboBoxItem>
+                    <ComboBoxItem Name="French">French</ComboBoxItem>
+                    <ComboBoxItem Name="German">German</ComboBoxItem>
+                    <ComboBoxItem Name="Hindi">Hindi</ComboBoxItem>
                 </ComboBox>
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="375"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
+                <Rectangle Height="20"></Rectangle>
             </Grid>
+
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="250" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="textBlockProficiency">Proficiency</TextBlock>
-                <ComboBox Name="profSelect" Grid.Column="1" Text="Select Language">
+                <TextBlock Grid.Column="0" Name="textBlockProficiency" FontSize="20">Proficieny:</TextBlock>
+                <ComboBox Name="profSelect" Grid.Column="1" Text="Select proficiency">
                     <ComboBoxItem Name="expert">Expert</ComboBoxItem>
                     <ComboBoxItem Name="intermediate">Intermediate</ComboBoxItem>
                     <ComboBoxItem Name="beginner">Beginner</ComboBoxItem>
@@ -45,40 +47,34 @@
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="375"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
+                <Rectangle Height="40"></Rectangle>
             </Grid>
+
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="125"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="nextLang" Width="200" Click="nextLang_Click" Content="Add Another" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
+                <Button Content="Add another" Grid.Column="0" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="nextLang" Width="125" Click="nextLang_Click" Background="{x:Null}" BorderThickness="0" FontSize="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="Submit" Grid.Column="1" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="submitLang" Width="125" Click="submitLang_Click" Background="{x:Null}" BorderThickness="0" FontSize="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="Cancel" Grid.Column="2" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="cancel" Width="125" Click="cancel_Click" Background="{x:Null}" BorderThickness="0" FontSize="20">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
             </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Button Name="submitLang" Width="200" Click="submitLang_Click" Content="Submit" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Rectangle Height="10"></Rectangle>
-            </Grid>
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-                <Button Name="cancel" Width="200" Click="cancel_Click" Content="Cancel" VerticalAlignment = "Center" FontSize = "15" HorizontalAlignment = "Center"></Button>
-            </Grid>
+
         </StackPanel>
     </Grid>
 </Page>
