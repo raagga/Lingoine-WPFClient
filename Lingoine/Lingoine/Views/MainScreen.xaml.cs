@@ -87,7 +87,7 @@ namespace Lingoine.Views
 
         private void Explore_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Resources());
         }
 
         private void AddLanguage_Click(object sender, RoutedEventArgs e)
