@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SKYPE4COMLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,30 @@ namespace Lingoine.Views
         private void Interact_Click(object sender, RoutedEventArgs e)
         {
 
+            Skype skype = new Skype();
+            skype.Client.Start(false, false);
+
+            if (!skype.Client.IsRunning)
+            {
+                // start minimized with no splash screen
+                skype.Client.Start(false, false);
+                //skype.Client.Start
+            }
+
+            // wait for the client to be connected and ready
+            skype.Attach(6, true);
+            
+            //// access skype objects
+            Console.WriteLine("Missed message count: {0}", skype.MissedMessages.Count);
+
+            //// do some stuff
+            Console.WriteLine("enter a skype name to search for: ");
+            String username = "facebook:welcomenikul";
+            skype.Client.OpenMessageDialog(username);
+
         }
 
-        private void Expert_Click(object sender, RoutedEventArgs e)
+private void Expert_Click(object sender, RoutedEventArgs e)
         {
 
         }
