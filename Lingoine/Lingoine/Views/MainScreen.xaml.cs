@@ -49,6 +49,7 @@ namespace Lingoine.Views
                 currentUser = (Models.User)App.Current.Properties["User"];
             }
             title.Text = "Welcome " + currentUser.Username + "!";
+            subtitle.Text = "Current Language: " + (string)App.Current.Properties["Language"];
         }
 
         private void Interact_Click(object sender, RoutedEventArgs e)
@@ -97,7 +98,7 @@ namespace Lingoine.Views
 
         private void ChooseLanguage_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.NavigationService.Navigate(new ChooseLanguage());
         }
     }
 }

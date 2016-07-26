@@ -57,7 +57,7 @@ namespace Lingoine.Views
                         {
                             App.Current.Properties["UserLevel"] = "1";
                         }
-                        this.NavigationService.Navigate(new MainScreen());
+                        this.NavigationService.Navigate(new ChooseLanguage());
                     }
                     else
                     {

@@ -60,6 +60,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Views\ChooseLanguage.xaml.cs">
+      <DependentUpon>ChooseLanguage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LanguageSelect.xaml.cs">
       <DependentUpon>LanguageSelect.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ChooseLanguage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LanguageSelect.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

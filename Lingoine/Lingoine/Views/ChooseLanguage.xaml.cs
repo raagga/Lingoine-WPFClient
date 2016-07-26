@@ -16,30 +16,24 @@ using System.Windows.Shapes;
 namespace Lingoine.Views
 {
     /// <summary>
-    /// Interaction logic for LanguageSelect.xaml
+    /// Interaction logic for ChooseLanguage.xaml
     /// </summary>
-    public partial class LanguageSelect : Page
+    public partial class ChooseLanguage : Page
     {
-        public LanguageSelect()
+        public ChooseLanguage()
         {
             InitializeComponent();
+            //TODO: Find available language
+            langSelect.Items.Add("French");
+            langSelect.Items.Add("German");
+            this.UpdateLayout();
         }
 
-        private void cancel_Click(object sender, RoutedEventArgs e)
+        private void choose_Click(object sender, RoutedEventArgs e)
         {
+            string selectedLanguage = langSelect.SelectedItem.ToString();
+            App.Current.Properties["Language"] = selectedLanguage;
             this.NavigationService.Navigate(new MainScreen());
-        }
-
-        private void submitLang_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new ChooseLanguage());
-            // TODO: Commit to server
-        }
-
-        private void nextLang_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new LanguageSelect());
-            // TODO: Commit to server
         }
     }
 }

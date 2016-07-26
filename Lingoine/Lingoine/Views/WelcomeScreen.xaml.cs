@@ -37,7 +37,7 @@ namespace Lingoine.Views
 
         private void explore_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new MainScreen());
+            this.NavigationService.Navigate(new ChooseLanguage());
         }
     }
 }

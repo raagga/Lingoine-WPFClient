@@ -56,7 +56,7 @@ namespace Lingoine.Views
                 var client = new RestClient(Constants.requestUrl);
                 var request = new RestRequest("api/UserTables", Method.POST);
                 request.RequestFormat = RestSharp.DataFormat.Json;
-                request.AddBody(new User
+                User currUser = new User
                 {
                     Username = textBoxUserName.Text,
                     DateOfBirth = dateOfBirth.DisplayDate,
@@ -69,7 +69,13 @@ namespace Lingoine.Views
                     Gender = gender,
                     IsOnline = false,
                     IsBusy = false
-                });
+                };
+
+                request.AddBody(currUser);
+
+                App.Current.Properties["UserLevel"] = "1";
+                App.Current.Properties["User"] = currUser;
+
                 var response = client.Execute(request);
                 System.Diagnostics.Debug.WriteLine(response.Content);
 
