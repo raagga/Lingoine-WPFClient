@@ -88,5 +88,15 @@ namespace Lingoine.Views
         {
 
         }
+
+        private void AddLanguage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChooseLanguage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

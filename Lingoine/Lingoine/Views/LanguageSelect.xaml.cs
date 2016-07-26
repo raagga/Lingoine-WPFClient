@@ -34,5 +34,10 @@ namespace Lingoine.Views
         {
             this.NavigationService.Navigate(new MainScreen());
         }
+
+        private void nextLang_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

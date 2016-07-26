@@ -151,6 +151,18 @@
             </Grid>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="ErrorBox"></TextBlock>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>

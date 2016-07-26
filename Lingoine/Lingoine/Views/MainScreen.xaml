@@ -24,6 +24,13 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="450"/>
                 </Grid.ColumnDefinitions>
+                <TextBlock Name="subtitle" FontSize="20" Grid.Column="0" Text="Current Language: French" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
                 <Rectangle Height="50"></Rectangle>
             </Grid>
 
@@ -86,6 +93,57 @@
                     </Button.Effect>
                 </Button>
             </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" VerticalAlignment = "Center" HorizontalAlignment="Center">Add another language</TextBlock>
+                <Button Content="Add" Grid.Row="1" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Name="AddLanguage" Width="150" Click="AddLanguage_Click" Background="{x:Null}" BorderThickness="0" FontSize ="25">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="15" VerticalAlignment = "Center" HorizontalAlignment="Center">Choose another language</TextBlock>
+                <Button Content="Choose" Grid.Row="1" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Name="ChooseLanguage" Width="150" Click="ChooseLanguage_Click" Background="{x:Null}" BorderThickness="0" FontSize ="25">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="30"></Rectangle>
+            </Grid>
+
         </StackPanel>
     </Grid>
 </Page>

@@ -30,36 +30,51 @@ namespace Lingoine.Views
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            bool gender = true;
-            if (radioButtonMale.IsChecked == true)
+            if (textBoxUserName.Text == string.Empty || textBoxEmail.Text == string.Empty || passwordBox1.Password == string.Empty || passwordBoxConfirm.Password == string.Empty || (radioButtonFemale.IsChecked == false && radioButtonMale.IsChecked == false) || textBlockState.Text == string.Empty || textBoxCountry.Text == string.Empty || textBoxSkype.Text == string.Empty)
             {
-                gender = true;
+                ErrorBox.Text = "You missed one or more fields";
             }
-            else if (radioButtonFemale.IsChecked == true)
+            else if (dateOfBirth.DisplayDate == DateTime.Today)
             {
-                gender = false;
-            } 
-            var client = new RestClient(Constants.requestUrl);
-            var request = new RestRequest("api/UserTables", Method.POST);
-            request.RequestFormat = RestSharp.DataFormat.Json;
-            request.AddBody(new User
+                ErrorBox.Text = "You should be older";
+            }
+            else if (passwordBox1.Password != passwordBoxConfirm.Password)
             {
-                Username = textBoxUserName.Text,
-                DateOfBirth = dateOfBirth.DisplayDate,
-                State = textBlockState.Text,
-                Country = textBoxCountry.Text,
-                Email = textBoxEmail.Text,
-                Password = passwordBox1.Password,
-                SkypeId = textBoxSkype.Text,
-                IsPremium = false,
-                Gender = gender,
-                IsOnline = false,
-                IsBusy = false
-            });
-            var response = client.Execute(request);
-            System.Diagnostics.Debug.WriteLine(response.Content);
+                ErrorBox.Text = "Your passwords don't match";
+            }
+            else
+            {
+                bool gender = true;
+                if (radioButtonMale.IsChecked == true)
+                {
+                    gender = true;
+                }
+                else if (radioButtonFemale.IsChecked == true)
+                {
+                    gender = false;
+                }
+                var client = new RestClient(Constants.requestUrl);
+                var request = new RestRequest("api/UserTables", Method.POST);
+                request.RequestFormat = RestSharp.DataFormat.Json;
+                request.AddBody(new User
+                {
+                    Username = textBoxUserName.Text,
+                    DateOfBirth = dateOfBirth.DisplayDate,
+                    State = textBlockState.Text,
+                    Country = textBoxCountry.Text,
+                    Email = textBoxEmail.Text,
+                    Password = passwordBox1.Password,
+                    SkypeId = textBoxSkype.Text,
+                    IsPremium = false,
+                    Gender = gender,
+                    IsOnline = false,
+                    IsBusy = false
+                });
+                var response = client.Execute(request);
+                System.Diagnostics.Debug.WriteLine(response.Content);
 
-            this.NavigationService.Navigate(new LanguageSelect());
+                this.NavigationService.Navigate(new LanguageSelect());
+            }
         }
 
         private void resetButton_Click(object sender, RoutedEventArgs e)
