@@ -1,0 +1,60 @@
+﻿<Page x:Class="Lingoine.Views.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lingoine.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="SignUp">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <Grid Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="350*" MinWidth="296" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Name="textBlockFirstName" Text="First Name:" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Name="textBlockLastName" Text="Last Name:" Height="20" Width="73" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Name="textBlockUserName" Text="User Name:" Height="20" Width="77" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Name="textBlockEmail" Text="Email:" Height="20" Width="39" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Name="textBlockPassword" Text="Password:" Height="20" Width="65" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5" Name="textBlockConfirmPassword" Text="Confirm Password:" Height="20" Width="122" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="6" Name="textBlockDOB" Text="DOB:" Height="20" Width="34" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="7" Name="textBlockGender" Text="Gender:" Height="20" Width="52" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="8" Name="textBlockLocation" Text="Location:" Height="20" Width="60" Margin="0,8.2,0,0" Grid.RowSpan="2" />
+
+                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Name="textBoxFirstName" TextWrapping="Wrap" Width="296"/>
+                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Name="textBoxLastName" Height="32" Width="296" />
+                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Name="textBoxUserName" Height="32" Width="296" />
+                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Name="textBoxEmail" Height="32" Width="296" />
+                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Name="passwordBox1" Height="32" Width="296" />
+                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Name="passwordBoxConfirm" Height="32" Width="296" />
+                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="6" Name="dateOfBirth" Height="33" Width="296" />
+                <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" Name="radioButtonMale" Content="Male" GroupName="radioButtonGender" Height="32" Grid.RowSpan="2" Width="120" />
+                <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" Name="radioButtonFemale" Content="Female" GroupName="radioButtonGender" Height="32" Grid.RowSpan="2" Width="120" Margin="76.6,0.2,0,0" />
+                <TextBox    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="8" Name="textBoxLocation" Height="32" Grid.RowSpan="2" Width="296" Margin="0,13.2,0,-13.2" />
+            </Grid>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Submit" Height="30" HorizontalAlignment="Center" x:Name="submitButton" Width="70" Click="submitButton_Click" Margin="70,30,0,0" />
+                <Button Content="Reset" Height="30" HorizontalAlignment="Center" x:Name="resetButton" Width="70" Click="resetButton_Click" Margin="70,30,0,0" />
+                <Button Content="Cancel" Height="30" HorizontalAlignment="Center" x:Name="cancelButton" Width="70" Click="cancelButton_Click" Margin="70,30,0,0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
