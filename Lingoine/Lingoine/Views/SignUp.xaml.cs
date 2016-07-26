@@ -1,4 +1,5 @@
 ﻿using Lingoine.Models;
+using Lingoine.Utils;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -38,8 +39,8 @@ namespace Lingoine.Views
             {
                 gender = false;
             } 
-            var client = new RestClient("http://localhost:3257/");
-            var request = new RestRequest("api/UserTable/", Method.POST);
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/UserTables", Method.POST);
             request.RequestFormat = RestSharp.DataFormat.Json;
             request.AddBody(new User
             {
@@ -56,7 +57,7 @@ namespace Lingoine.Views
                 IsBusy = false
             });
             var response = client.Execute(request);
-            System.Diagnostics.Debug.WriteLine(response);
+            System.Diagnostics.Debug.WriteLine(response.Content);
 
             this.NavigationService.Navigate(new LanguageSelect());
         }

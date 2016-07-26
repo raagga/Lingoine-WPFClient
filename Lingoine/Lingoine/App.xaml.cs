@@ -15,7 +15,7 @@ namespace Lingoine
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            App.Current.Properties["UserLevel"] = "2";
+            App.Current.Properties["UserLevel"] = "0";
         }
     }
 }

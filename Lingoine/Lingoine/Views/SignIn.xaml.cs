@@ -31,31 +31,41 @@ namespace Lingoine.Views
         {
             var client = new RestClient(Constants.requestUrl);
             var request = new RestRequest("api/UserTables/"+textBoxUserName.Text, Method.GET);
-            var queryResult = client.Execute<Models.User>(request).Data;
-            if (queryResult == null)
+            var queryResultList = client.Execute<List<Models.User>>(request).Data;
+            Models.User queryResult = new Models.User();
+            if (queryResultList.Count == 0)
             {
-                Alert.Text = "Server Error!";
+                Alert.Text = "User Doesn't Exist";
             }
             else
             {
-                if (queryResult.Password == textBoxPassword.Password)
+                queryResult = queryResultList[0];
+                if (queryResult == null)
                 {
-                    App.Current.Properties["User"] = queryResult;
-                    if (queryResult.IsPremium == true)
-                    {
-                        App.Current.Properties["UserLevel"] = 2;
-                    }
-                    else
-                    {
-                        App.Current.Properties["UserLevel"] = 1;
-                    }
-                    this.NavigationService.Navigate(new MainScreen());
+                    Alert.Text = "User Doesn't Exist";
                 }
                 else
                 {
-                    Alert.Text = "Wrong Password!";
+                    if (queryResult.Password == textBoxPassword.Password)
+                    {
+                        App.Current.Properties["User"] = queryResult;
+                        if (queryResult.IsPremium == true)
+                        {
+                            App.Current.Properties["UserLevel"] = "2";
+                        }
+                        else
+                        {
+                            App.Current.Properties["UserLevel"] = "1";
+                        }
+                        this.NavigationService.Navigate(new MainScreen());
+                    }
+                    else
+                    {
+                        Alert.Text = "Wrong Password!";
+                    }
                 }
             }
+            
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
