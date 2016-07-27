@@ -67,51 +67,135 @@ namespace Lingoine.Views
             var client = new RestClient(Constants.requestUrl);
             var request = new RestRequest("api/UserTables/getSkypeInfo/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] + "/"+ isPremium.ToString() + "/", Method.GET);
             var response = client.Execute(request);
-            string data = (string)response.Content;
-            string[] information = data.Split(',');
-
-            string connectedUser = information[0];
-            string connectedUserID = information[1];
-
-            try
+            if (response.Content == null)
             {
-                Skype skype = new Skype();
-                if (!skype.Client.IsRunning)
-                {
-                    // start minimized with no splash screen
-                    skype.Client.Start(false, false);
-                }
 
-                // wait for the client to be connected and ready
-                skype.Attach(6, true);
-
-                // do some stuff
-                String username = connectedUser;
-                skype.Client.OpenMessageDialog(username);
-
-                //Call newCall = skype.PlaceCall(username);
-                //do
-                //{
-                //    System.Threading.Thread.Sleep(1);
-                //} while (newCall.Status != TCallStatus.clsInProgress);
-                //newCall.StartVideoSend();
-                ////newCall.VideoStatus.ToString();
-
-                var request1 = new RestRequest("api/UserTables/" + connectedUserID + "/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] ] + "/", Method.GET);
-                client.Execute(request1);
-
-                this.NavigationService.Navigate(new RatingScreen());
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex);
+                string data = (string)response.Content;
+                if (data == string.Empty)
+                {
+
+                }
+                else
+                {
+                    string[] information = data.Split(',');
+
+                    string connectedUser = information[0];
+                    string connectedUserID = information[1];
+                    connectedUserID = connectedUserID.TrimEnd('"');
+                    System.Diagnostics.Debug.WriteLine(connectedUserID);
+
+                    try
+                    {
+                        Skype skype = new Skype();
+                        if (!skype.Client.IsRunning)
+                        {
+                            // start minimized with no splash screen
+                            skype.Client.Start(false, false);
+                        }
+
+                        // wait for the client to be connected and ready
+                        skype.Attach(6, true);
+
+                        // do some stuff
+                        String username = connectedUser;
+                        skype.Client.OpenMessageDialog(username);
+
+                        //Call newCall = skype.PlaceCall(username);
+                        //do
+                        //{
+                        //    System.Threading.Thread.Sleep(1);
+                        //} while (newCall.Status != TCallStatus.clsInProgress);
+                        //newCall.StartVideoSend();
+                        ////newCall.VideoStatus.ToString();
+
+                        var request1 = new RestRequest("api/UserTables/" + connectedUserID + "/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] +"/", Method.GET);
+                        client.Execute(request1);
+                        App.Current.Properties["TeacherID"] = connectedUserID;
+
+                        this.NavigationService.Navigate(new RatingScreen());
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
             }
 
         }
 
         private void Expert_Click(object sender, RoutedEventArgs e)
         {
+            Models.User currUser = (Models.User)App.Current.Properties["User"];
+            string currUserEmail = currUser.Email;
 
+            int isPremium = 0;
+            if (currUser.IsPremium)
+            {
+                isPremium = 1;
+            }
+
+            var client = new RestClient(Constants.requestUrl);
+            var request = new RestRequest("api/UserTables/getSkypeInfo/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] + "/" + isPremium.ToString() + "/", Method.GET);
+            var response = client.Execute(request);
+            if (response.Content == null)
+            {
+
+            }
+            else
+            {
+                string data = (string)response.Content;
+                if (data == string.Empty)
+                {
+
+                }
+                else
+                {
+                    string[] information = data.Split(',');
+
+                    string connectedUser = information[0];
+                    string connectedUserID = information[1];
+                    connectedUserID = connectedUserID.TrimEnd('"');
+                    System.Diagnostics.Debug.WriteLine(connectedUserID);
+
+                    try
+                    {
+                        Skype skype = new Skype();
+                        if (!skype.Client.IsRunning)
+                        {
+                            // start minimized with no splash screen
+                            skype.Client.Start(false, false);
+                        }
+
+                        // wait for the client to be connected and ready
+                        skype.Attach(6, true);
+
+                        // do some stuff
+                        String username = connectedUser;
+                        skype.Client.OpenMessageDialog(username);
+
+                        //Call newCall = skype.PlaceCall(username);
+                        //do
+                        //{
+                        //    System.Threading.Thread.Sleep(1);
+                        //} while (newCall.Status != TCallStatus.clsInProgress);
+                        //newCall.StartVideoSend();
+                        ////newCall.VideoStatus.ToString();
+
+                        var request1 = new RestRequest("api/UserTables/" + connectedUserID + "/" + currUserEmail + "/" + (string)App.Current.Properties["Language"] + "/", Method.GET);
+                        client.Execute(request1);
+                        App.Current.Properties["TeacherID"] = connectedUserID;
+
+                        this.NavigationService.Navigate(new RatingScreen());
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+            }
         }
 
         private void Explore_Click(object sender, RoutedEventArgs e)
